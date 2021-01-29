@@ -1,0 +1,144 @@
+:root{ /*Declaração de variáveis dentro da estrutura do elemento root*/
+    --vermelho: #E50914;
+    --preto: #141414;
+}
+
+*{ /*Reset do CSS, para unificar as configurações da página web, indiferente das configurações default utilizadas pelos diversos navegadores*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /*Esta config garante que os elementos não ultrapassem os tamanhos estipulados pela nossa caixa*/
+}
+
+/*Elementos Base*/
+body{ /*Configuração do estilo a ser utilizado na aplicação index_netflix*/
+    background: var(--preto);
+    font-family: 'Arial', Times, serif;   
+    color: white; 
+}
+
+/*Mudar a cor da página de acordo com a opção do usuário*/
+
+body.claro{ /*Configuração do estilo a ser utilizado na aplicação index_netflix*/
+    background: rgb(241, 235, 235);
+    font-family: 'Arial', Times, serif;   
+    color: white; 
+}
+
+header .container{ /*Neste ponto me refiro à TAG HTML = header e a classe .container*/
+    display:flex; /*Alinhamento dos elementos de tela*/
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .logo{
+    margin-left: 5px;
+    color: var(--vermelho);
+    font-family: 'Arial Black', Times;
+    font-size: 40px;
+}
+
+header nav a{
+    text-decoration: none;
+    color: #AAA;
+    margin-right: 10px;
+}
+
+header nav a:hover{ /*Ao passar o mouse sobre os links/elementos de navegação eles mudarão de cor*/
+    color: #fff;
+}
+
+/*Filme principal*/
+body .filme-principal{
+    font-size: 16px;
+    background: linear-gradient(rgba(0,0,0,.50),rgba(0,0,0,.50)100%), url("/netflix_personalizado/img/GoodDoctor_capa.jpg");
+    height: 400px;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+
+.filme-principal .descricao{
+    margin-top: 5%;
+    margin-bottom: 40px;
+    width: 50%;
+}
+
+.filme-principal .titulo{
+    margin-top: 1%;
+    font-size: 35px;
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.botao{
+    margin-top:5%;
+    background-color: rgba(0,0,0,.50);
+    border: none;
+    color: white;
+
+    padding: 15px 30px;
+    margin-right: 15px;
+    font-size: 12px;
+
+    cursor: pointer; /*Modifica o mouse para um padrão diferente, em UX isso fica melhor para identificar uma área clicável*/
+    transition: .4s ease all;
+}
+
+.botao:hover{
+    background-color: white;
+    color: black;
+}
+
+.botao i{
+    margin-right: 5px;
+}
+
+.container{ /*Afeta a todos os containers*/
+    margin-left: 20px;
+}
+
+.filme-principal .container{ /*Afeta apenas ao container do "filme-principal"*/
+    width: 70%;
+}
+
+.box-filme{
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.carrossel-filmes{
+    margin-top: 5px;
+}
+
+.checkbox{
+    opacity: 0;
+    position: absolute;
+}
+
+.label{
+    background: #AAA;
+    display: flex;
+    border-radius: 50px;
+    position: relative;
+    height: 16px;
+    width: 30px;
+}
+
+.ball{
+    background-color: #fff;
+    top: 2px;
+    left: 2px;
+    height: 16px;
+    width: 15px;
+    border-radius: 50px;
+    transition: transform 0.12s linear;
+}
+
+.checkbox:checked + label .ball{
+    transform: translateX(15px);
+}
